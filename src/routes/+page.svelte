@@ -1,5 +1,4 @@
 <script>
-    import "../app.css";
 
     let count = 0;
 
@@ -13,7 +12,11 @@
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 
-<button on:click={increment}>
+<button on:click={increment}
+class="rounded-full bg-cyan-700">
     clicked {count}
     {count === 1 ? "time" : "times"}
 </button>
+
+
+
