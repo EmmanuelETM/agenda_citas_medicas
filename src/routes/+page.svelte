@@ -13,7 +13,7 @@
 
 
 <button on:click={increment}
-class="rounded-full bg-cyan-700">
+class="rounded-full btn btn-primary">
     clicked {count}
     {count === 1 ? "time" : "times"}
 </button>
