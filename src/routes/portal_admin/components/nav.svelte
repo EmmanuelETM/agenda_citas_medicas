@@ -1,23 +1,23 @@
 <div class="navbar bg-base-100 col-start-1 col-end-13" data-theme="dark">
     <div class="flex-none">
 
-      <!-- Sidebar drawer -->
       <div class="drawer">
         <input id="my-drawer" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content">
-          <!-- Contenido de la página aquí -->
           <label for="my-drawer" class="btn btn-ghost drawer-button">☰</label>
         </div> 
         <div class="drawer-side">
           <label for="my-drawer" aria-label="cerrar barra lateral" class="drawer-overlay"></label>
           <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-            <!-- Contenido de la barra lateral aquí -->
             <li><a href="/">Home</a></li>
-            <!-- <li><a href="#">About</a></li> -->
+            <li><a href="/">Gestion User</a></li>
+            <li><a href="/">Gestion Medico</a></li>
+            <li><a href="/">Gestion Cita</a></li>
+            <li><a href="/">Gestion Consultorio</a></li>
+            <li><a href="/">Chat</a></li>
           </ul>
         </div>
       </div>
-      <!-- End Sidebar drawer-->
 
     </div>
     <div class="flex-1">
