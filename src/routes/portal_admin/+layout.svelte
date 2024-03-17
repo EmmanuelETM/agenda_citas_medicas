@@ -1,5 +1,6 @@
 <script>
     import Nav from "./components/nav.svelte";
+    // @ts-ignore
     import Sidebar from "./components/sidebar.svelte"
     import Footer from "$lib/footer.svelte"
 </script>
@@ -15,6 +16,6 @@
     .index{
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-auto-rows: minmax(80px, auto);
+        grid-auto-rows: minmax(129px, auto);
     }
 </style>
