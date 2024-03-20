@@ -21,7 +21,7 @@ class="rounded-full btn btn-primary">
 
 
 <nav>
-	<a href="/">home</a>
-    <a href="/about">about</a>
-    <a href="/portal_admin">admin</a>
+	<a href="./">home</a>
+    <a href="./about">about</a>
+    <a href="./portal_admin">admin</a>
 </nav>

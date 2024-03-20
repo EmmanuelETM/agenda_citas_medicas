@@ -1,7 +1,7 @@
 <script>
-    import Nav from "./components/nav.svelte";
     // @ts-ignore
     import Sidebar from "./components/sidebar.svelte"
+    import Main from "./components/main.svelte"
     import Footer from "$lib/footer.svelte"
 </script>
 
@@ -12,10 +12,10 @@
     <Footer/>
 </div>
 
-<style>
+<!-- <style>
     .index{
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-auto-rows: minmax(129px, auto);
+        grid-auto-rows: minmax(75px, auto);
     }
-</style>
+</style> -->

@@ -1,5 +1,5 @@
-<footer class="footer items-center p-4 bg-neutral text-neutral-content fixed bottom-0 col-start-5 col-end-13 flex justify-end"> 
-  <aside class="items-center grid-flow-col sm:place-self-center sm:justify-normal">
+<footer class="footer items-center p-4 bg-neutral text-neutral-content fixed bottom-0 col-start-5 col-end-13 flex justify-center sm:justify-end"> 
+  <aside class="items-center grid-flow-col sm:place-self-center justify-normal lg:justify-center">
     <p>Copyright © 2024 - All right reserved</p>
   </aside> 
   <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
@@ -11,11 +11,12 @@
 </footer>
 
 
-
-
 <!-- <footer class="footer footer-center p-4 bg-base-300 text-base-content col-start-1 col-end-13 row-start-9 row-end-9">
   <aside>
     <p>Copyright © 2024 - All right reserved by EtmWare's Ltd</p>
   </aside>
 </footer> -->
+
+
+
 
