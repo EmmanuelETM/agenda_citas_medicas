@@ -1,5 +1,6 @@
 <script>
 
+    export let data;
     let count = 0;
 
     function increment(){
@@ -25,3 +26,6 @@ class="rounded-full btn btn-primary">
     <a href="./about">about</a>
     <a href="./portal_admin">admin</a>
 </nav>
+
+
+ 

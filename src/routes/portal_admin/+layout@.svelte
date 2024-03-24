@@ -5,12 +5,12 @@
     import Footer from "$lib/footer.svelte"
 </script>
 
-<div class="index">
+<div class="index min-h-screen">
     <!-- <Nav/> -->
     <Sidebar/>
     <slot/>
-    <Footer/>
 </div>
+<Footer/>
 
 <!-- <style>
     .index{

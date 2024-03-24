@@ -1,4 +1,4 @@
-<footer class="footer items-center p-4 bg-neutral text-neutral-content fixed bottom-0 col-start-5 col-end-13 flex justify-center sm:justify-end"> 
+<footer class="footer items-center bg-gray-800 p-4 text-neutral-content flex justify-center sm:justify-end"> 
   <aside class="items-center grid-flow-col sm:place-self-center justify-normal lg:justify-center">
     <p>Copyright © 2024 - All right reserved</p>
   </aside> 
