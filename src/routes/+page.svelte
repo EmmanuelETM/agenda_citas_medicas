@@ -1,5 +1,4 @@
 <script>
-
     export let data;
     let count = 0;
 
@@ -25,6 +24,8 @@ class="rounded-full btn btn-primary">
 	<a href="./">home</a>
     <a href="./about">about</a>
     <a href="./portal_admin">admin</a>
+    <a href="./portal_paciente">paciente</a>
+    <a href="./portal_medico">medico</a>
 </nav>
 
 
