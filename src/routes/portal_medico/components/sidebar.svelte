@@ -8,7 +8,7 @@
                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
             </svg>
          </button>
-        <a href="/portal_admin" class="flex ms-2 md:me-24">
+        <a href="/portal_paciente" class="flex ms-2 md:me-24">
           <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
           <span class="self-center text-lg font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Sistema de Agenda de Citas Medicas</span>
         </a>
@@ -17,7 +17,7 @@
           <div class="flex items-center ms-3">
             <div>
               <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
-                <span class="sr-only">Open user menu</span>
+                <span class="sr-only">Menu</span>
                 <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
               </button>
             </div>
@@ -55,38 +55,25 @@
    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
          <li>
-            <a href="/portal_admin" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="/portal_medico" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <i class="fa-solid fa-house"></i>
                <span class="ms-3">Home</span>
             </a>
          </li>
-          <li>
-            <a href="/portal_admin/paciente" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-               <i class="fa-solid fa-user"></i>
-               <span class="flex-1 ms-3 whitespace-nowrap">Pacientes</span>
-            </a>
-         </li>
          <li>
-            <a href="/portal_admin/medico" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="/portal_medico" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <i class="fa-solid fa-user-nurse"></i>
                <span class="flex-1 ms-3 whitespace-nowrap">Medicos</span>
             </a>
          </li>
-
          <li>
-            <a href="/portal_admin/cita" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <i class="fa-regular fa-calendar-check"></i>
-               <span class="flex-1 ms-3 whitespace-nowrap">Citas</span>
-            </a>
-         </li>
-         <li>
-            <a href="/portal_admin/pago" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="/portal_medico" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <i class="fa-solid fa-dollar-sign"></i>
-               <span class="flex-1 ms-3 whitespace-nowrap">Pagos</span>
+               <span class="flex-1 ms-3 whitespace-nowrap">Facturas</span>
             </a>
          </li>
          <li>
-            <a href="/portal_admin/chat" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="/portal_medico" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <i class="fa-solid fa-message"></i>
                <span class="flex-1 ms-3 whitespace-nowrap">Chat</span>
             </a>
