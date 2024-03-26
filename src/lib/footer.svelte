@@ -10,6 +10,19 @@
   </nav>
 </footer>
 
+<style>
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #02172c; /* Color de fondo del pie de página */
+    padding: 20px; /* Espaciado interno del pie de página */
+    text-align: center; /* Alineación del contenido del pie de página */
+    /* Otros estilos según sea necesario */
+  }
+</style>
+
 
 <!-- <footer class="footer footer-center p-4 bg-base-300 text-base-content col-start-1 col-end-13 row-start-9 row-end-9">
   <aside>
