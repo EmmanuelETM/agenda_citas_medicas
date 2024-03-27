@@ -90,8 +90,13 @@
                             </div>
                         </div>
                     </div>
-                
 
+
+
+
+
+
+                
                     <div class="flex items-center space-x-3 w-full md:w-auto">
 
                         <!-- Filter button -->
@@ -217,6 +222,76 @@
                             <td class="px-4 py-3">Nikon</td>
                             <td class="px-4 py-3">465</td>
                             <td class="px-4 py-3">$599</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
+                            <td class="px-4 py-3">TV/Monitor</td>
+                            <td class="px-4 py-3">BenQ</td>
+                            <td class="px-4 py-3">354</td>
+                            <td class="px-4 py-3">$499</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
+                            <td class="px-4 py-3">TV/Monitor</td>
+                            <td class="px-4 py-3">BenQ</td>
+                            <td class="px-4 py-3">354</td>
+                            <td class="px-4 py-3">$499</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
+                            <td class="px-4 py-3">TV/Monitor</td>
+                            <td class="px-4 py-3">BenQ</td>
+                            <td class="px-4 py-3">354</td>
+                            <td class="px-4 py-3">$499</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
+                            <td class="px-4 py-3">TV/Monitor</td>
+                            <td class="px-4 py-3">BenQ</td>
+                            <td class="px-4 py-3">354</td>
+                            <td class="px-4 py-3">$499</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
+                            <td class="px-4 py-3">TV/Monitor</td>
+                            <td class="px-4 py-3">BenQ</td>
+                            <td class="px-4 py-3">354</td>
+                            <td class="px-4 py-3">$499</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
+                            <td class="px-4 py-3">TV/Monitor</td>
+                            <td class="px-4 py-3">BenQ</td>
+                            <td class="px-4 py-3">354</td>
+                            <td class="px-4 py-3">$499</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
+                            <td class="px-4 py-3">TV/Monitor</td>
+                            <td class="px-4 py-3">BenQ</td>
+                            <td class="px-4 py-3">354</td>
+                            <td class="px-4 py-3">$499</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>

@@ -26,6 +26,7 @@ class="rounded-full btn btn-primary">
     <a href="./portal_admin">admin</a>
     <a href="./portal_paciente">paciente</a>
     <a href="./portal_medico">medico</a>
+    <a href="./index.html">index</a>
 </nav>
 
 
