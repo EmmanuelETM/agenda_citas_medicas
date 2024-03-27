@@ -125,11 +125,13 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-4 py-3">Product name</th>
-                            <th scope="col" class="px-4 py-3">Category</th>
-                            <th scope="col" class="px-4 py-3">Brand</th>
-                            <th scope="col" class="px-4 py-3">Description</th>
-                            <th scope="col" class="px-4 py-3">Price</th>
+                            <th scope="col" class="px-4 py-3">Id Cita</th>
+                            <th scope="col" class="px-4 py-3">Medico</th>
+                            <th scope="col" class="px-4 py-3">Paciente</th>
+                            <th scope="col" class="px-4 py-3">Categoria</th>
+                            <th scope="col" class="px-4 py-3">Fecha</th>
+                            <th scope="col" class="px-4 py-3">Hora</th>
+                            <th scope="col" class="px-4 py-3">Estado</th>
                             <th scope="col" class="px-4 py-3">
                                 Actions
                             </th>
@@ -142,6 +144,8 @@
                             <td class="px-4 py-3">Apple</td>
                             <td class="px-4 py-3">300</td>
                             <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>
@@ -152,6 +156,8 @@
                             <td class="px-4 py-3">Apple</td>
                             <td class="px-4 py-3">200</td>
                             <td class="px-4 py-3">$1499</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>
@@ -161,6 +167,8 @@
                             <td class="px-4 py-3">Phone</td>
                             <td class="px-4 py-3">Apple</td>
                             <td class="px-4 py-3">1237</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
                             <td class="px-4 py-3">$999</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
@@ -172,6 +180,8 @@
                             <td class="px-4 py-3">Apple</td>
                             <td class="px-4 py-3">4578</td>
                             <td class="px-4 py-3">$1199</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>
@@ -182,6 +192,8 @@
                             <td class="px-4 py-3">Microsoft</td>
                             <td class="px-4 py-3">56</td>
                             <td class="px-4 py-3">$299</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>
@@ -192,6 +204,8 @@
                             <td class="px-4 py-3">Sony</td>
                             <td class="px-4 py-3">78</td>
                             <td class="px-4 py-3">$799</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>
@@ -202,6 +216,9 @@
                             <td class="px-4 py-3">Microsoft</td>
                             <td class="px-4 py-3">200</td>
                             <td class="px-4 py-3">$699</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
+
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>
@@ -212,6 +229,8 @@
                             <td class="px-4 py-3">Apple</td>
                             <td class="px-4 py-3">657</td>
                             <td class="px-4 py-3">$399</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>
@@ -222,6 +241,8 @@
                             <td class="px-4 py-3">Nikon</td>
                             <td class="px-4 py-3">465</td>
                             <td class="px-4 py-3">$599</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>
@@ -231,86 +252,8 @@
                             <td class="px-4 py-3">TV/Monitor</td>
                             <td class="px-4 py-3">BenQ</td>
                             <td class="px-4 py-3">354</td>
-                            <td class="px-4 py-3">$499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
-                            <td class="px-4 py-3">TV/Monitor</td>
-                            <td class="px-4 py-3">BenQ</td>
-                            <td class="px-4 py-3">354</td>
-                            <td class="px-4 py-3">$499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
-                            <td class="px-4 py-3">TV/Monitor</td>
-                            <td class="px-4 py-3">BenQ</td>
-                            <td class="px-4 py-3">354</td>
-                            <td class="px-4 py-3">$499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
-                            <td class="px-4 py-3">TV/Monitor</td>
-                            <td class="px-4 py-3">BenQ</td>
-                            <td class="px-4 py-3">354</td>
-                            <td class="px-4 py-3">$499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
-                            <td class="px-4 py-3">TV/Monitor</td>
-                            <td class="px-4 py-3">BenQ</td>
-                            <td class="px-4 py-3">354</td>
-                            <td class="px-4 py-3">$499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
-                            <td class="px-4 py-3">TV/Monitor</td>
-                            <td class="px-4 py-3">BenQ</td>
-                            <td class="px-4 py-3">354</td>
-                            <td class="px-4 py-3">$499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
-                            <td class="px-4 py-3">TV/Monitor</td>
-                            <td class="px-4 py-3">BenQ</td>
-                            <td class="px-4 py-3">354</td>
-                            <td class="px-4 py-3">$499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
-                            <td class="px-4 py-3">TV/Monitor</td>
-                            <td class="px-4 py-3">BenQ</td>
-                            <td class="px-4 py-3">354</td>
-                            <td class="px-4 py-3">$499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
-                            <td class="px-4 py-3">TV/Monitor</td>
-                            <td class="px-4 py-3">BenQ</td>
-                            <td class="px-4 py-3">354</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
                             <td class="px-4 py-3">$499</td>
                             <td class="px-4 py-3">
                                 <Buttons/>
