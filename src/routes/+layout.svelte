@@ -5,17 +5,7 @@
     import Header from "$lib/header.svelte";
 </script>
 
-<!-- <Header/> -->
-
-<main>
 <slot/>
-</main>
 
-<!-- <Footer/> -->
-<style>
-    nav{
-        bottom: 0;
-        left: 0;
-    }
-</style>
+
 

@@ -39,7 +39,7 @@
                             <th scope="col" class="px-4 py-3">Nombre</th>
                             <th scope="col" class="px-4 py-3">Especialidades</th>
                             <th scope="col" class="px-4 py-3">Procedimientos</th>
-                            <th scope="col" class="px-4 py-3">Price</th>
+                            <th scope="col" class="px-4 py-3">Consultorios</th>
                             <th scope="col" class="px-4 py-3">
                                 Actions
                             </th>
