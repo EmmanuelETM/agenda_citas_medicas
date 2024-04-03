@@ -66,7 +66,24 @@
                <span class="flex-1 ms-3 whitespace-nowrap">Medicos</span>
             </a>
          </li>
-
+          <li>
+            <a href="/portal_admin/especialidad" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <i class="fa-solid fa-star"></i>
+              <span class="flex-1 ms-3 whitespace-nowrap">Especialidades</span>
+            </a>
+          </li>
+          <li>
+            <a href="/portal_admin/procedimientos" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <i class="fa-solid fa-gear"></i>
+              <span class="flex-1 ms-3 whitespace-nowrap">Procedimientos</span>
+            </a>
+          </li>
+          <li>
+            <a href="/portal_admin/consultorios" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <i class="fa-solid fa-person-shelter"></i>
+              <span class="flex-1 ms-3 whitespace-nowrap">Consultorios</span>
+            </a>
+          </li>
          <li>
             <a href="/portal_admin/cita" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               <i class="fa-regular fa-calendar-check"></i>

@@ -1,15 +1,9 @@
-
 <script>
-    import Buttons from "./components/buttons.svelte"
-    /**
-     * @type {any}
-     */
-     export let data;
+    import Buttons from "./buttons.svelte"
 </script>
 
 <section class="p-3 sm:p-5">
     <div class="mx-auto max-w-screen-xl px-4 lg:px-0">
-        <!-- Start coding here -->
         
         <!-- Table time -->
 
@@ -95,6 +89,8 @@
                             </div>
                         </div>
                     </div>
+
+                    
                 
                     <div class="flex items-center space-x-3 w-full md:w-auto">
 
@@ -124,27 +120,129 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-4 py-3">Id Paciente</th>
-                            <th scope="col" class="px-4 py-3">Nombre</th>
-                            <th scope="col" class="px-4 py-3">Fecha Nacimiento</th>
-                            <th scope="col" class="px-4 py-3">Email</th>
-                            <th scope="col" class="px-4 py-3">
+                            <th scope="col" class="w-1/4 px-4 py-3">Id Especialidad</th>
+                            <th scope="col" class="w-1/4 px-4 py-3">Nombre</th>
+                            <th scope="col" class="w-1/4 px-4 py-3">Descripcion</th>
+                            <th scope="col" class="w-1/4 px-4 py-3">
                                 Actions
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {#each data.users as user}
-                            <tr class="border-b dark:border-gray-700">
-                                <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{user.user_id}</th>
-                                <td class="px-4 py-3">{user.nombre}</td>
-                                <td class="px-4 py-3">{user.fecha_nacimiento}</td>
-                                <td class="px-4 py-3">{user.email}</td>
-                                <td class="px-4 py-3">
-                                    <Buttons/>
-                                </td>        
-                            </tr>
-                        {/each}
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 27&#34;</th>
+                            <td class="px-4 py-3">PC</td>
+                            <td class="px-4 py-3">Apple</td>
+                            <td class="px-4 py-3">300</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 20&#34;</th>
+                            <td class="px-4 py-3">PC</td>
+                            <td class="px-4 py-3">Apple</td>
+                            <td class="px-4 py-3">200</td>
+                            <td class="px-4 py-3">$1499</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iPhone 14</th>
+                            <td class="px-4 py-3">Phone</td>
+                            <td class="px-4 py-3">Apple</td>
+                            <td class="px-4 py-3">1237</td>
+                            <td class="px-4 py-3">$999</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iPad Air</th>
+                            <td class="px-4 py-3">Tablet</td>
+                            <td class="px-4 py-3">Apple</td>
+                            <td class="px-4 py-3">4578</td>
+                            <td class="px-4 py-3">$1199</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Xbox Series S</th>
+                            <td class="px-4 py-3">Gaming/Console</td>
+                            <td class="px-4 py-3">Microsoft</td>
+                            <td class="px-4 py-3">56</td>
+                            <td class="px-4 py-3">$299</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">PlayStation 5</th>
+                            <td class="px-4 py-3">Gaming/Console</td>
+                            <td class="px-4 py-3">Sony</td>
+                            <td class="px-4 py-3">78</td>
+                            <td class="px-4 py-3">$799</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Xbox Series X</th>
+                            <td class="px-4 py-3">Gaming/Console</td>
+                            <td class="px-4 py-3">Microsoft</td>
+                            <td class="px-4 py-3">200</td>
+                            <td class="px-4 py-3">$699</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple Watch SE</th>
+                            <td class="px-4 py-3">Watch</td>
+                            <td class="px-4 py-3">Apple</td>
+                            <td class="px-4 py-3">657</td>
+                            <td class="px-4 py-3">$399</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">NIKON D850</th>
+                            <td class="px-4 py-3">Photo</td>
+                            <td class="px-4 py-3">Nikon</td>
+                            <td class="px-4 py-3">465</td>
+                            <td class="px-4 py-3">$599</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
+                            <td class="px-4 py-3">TV/Monitor</td>
+                            <td class="px-4 py-3">BenQ</td>
+                            <td class="px-4 py-3">354</td>
+                            <td class="px-4 py-3">$499</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b dark:border-gray-700">
+
                     </tbody>
                 </table>
             </div>
@@ -179,5 +277,4 @@
             </nav>
         </div>
     </div>
-</section>
- 
+    </section>
