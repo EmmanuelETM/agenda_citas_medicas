@@ -42,7 +42,6 @@ export async function POST(event) {
                             apellidos: apellidos, 
                             fecha_nacimiento: fecha_nacimiento, 
                             email: email, 
-                            password: password,
                             tipo_user: tipo_user 
                         }]);
                 

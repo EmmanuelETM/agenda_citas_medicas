@@ -2,7 +2,6 @@
     import { Auth } from '@supabase/auth-ui-svelte'
 	import { ThemeSupa } from '@supabase/auth-ui-shared'
 
-	export let data
   
     let count = 0;
 

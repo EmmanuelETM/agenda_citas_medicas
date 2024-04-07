@@ -1,80 +1,37 @@
 <script>
-    import { enhance } from "$app/forms";
-    import { json } from "@sveltejs/kit";
  
-    let nombre = '';
-    let apellidos = '';
-    let email = '';
-    let password = '';
-    let fecha_nacimiento = '';
-    const tipo_user = 1;
-    let error = '';
 
-    
-    async function handleSignup(event) {
-        event.preventDefault(); 
-
-        let formData = JSON.stringify({
-            nombre: nombre,
-            apellidos: apellidos,
-            fecha_nacimiento: fecha_nacimiento,
-            email: email,
-            password: password, 
-            tipo_user: tipo_user
-        })
-        
-
-        const res = await fetch('/auth/signUp', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: formData, 
-        });
-
-        if (!res.ok) {
-            const data = await res.json();
-            console.error('Error al registrar usuario:', data.error);
-        } else{
-            console.log(res)
-        }
-    }
-
-  </script>
+</script>
 
   
-  <section class="bg-gray-50 dark:bg-gray-900">
-    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0" style="background-color: #000033;">
-        <h3 class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-            Registro User    
-        </h3>
-        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700" style="background-color: rgb(31 41 55);">
-            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                
-                <form on:submit|preventDefault={handleSignup} method="post" class="flex flex-col space-y-4 md:space-y-6">
-                    <div>
-                        <label for="nombre" class="block mb-2 text-sm font-medium text-white dark:text-white">Nombre</label>
-                        <input type="text" bind:value={nombre} id="nombre" placeholder="Nombre" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                    </div>
-                    <div>
-                        <label for="apellido" class="block mb-2 text-sm font-medium text-white dark:text-white">Apellido</label>
-                        <input type="text" bind:value={apellidos} id="apellidos" placeholder="Apellido" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                    </div>
-                    <div>
-                        <label for="fecha-nacimiento" class="block mb-2 text-sm font-medium text-white dark:text-white">Fecha de nacimiento</label>
-                        <input type="date" bind:value={fecha_nacimiento} id="fecha-nacimiento" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                    </div>                    
-                    <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-white dark:text-white">Email</label>
-                        <input type="email" bind:value={email} id="email" placeholder="test@example.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                    </div>
-                    <div>
-                        <label for="Contraseña" class="block mb-2 text-sm font-medium text-white dark:text-white">Contraseña</label>
-                        <input type="password" bind:value={password} id="Contraseña" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                    </div>
-                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Registrarse</button>
-                </form>
+<section class="bg-gray-50 h-dvh dark:bg-gray-900">
+    <div class="p-4 h-auto pt-20">
+        <div class="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 lg:mt-20 gap-4 mb-4">
+            
+            <div class="mt-10 sm:mt-0 row-start-2 row-end-3 sm:row-end-3 col-start-1 col-end-5 lg:col-start-2 lg:col-end-7 w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Paciente</h5>
+                <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                   <a href="/registro/user" class="w-full sm:w-auto bg-blue-800 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-blue-700 dark:hover:bg-blue-600 dark:focus:ring-blue-700">
+                      <i class="fa-solid fa-user">&nbsp;&nbsp;</i>
+                        <div class="text-left rtl:text-right">
+                            Pacientes
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="row-start-4 row-end-5 sm:row-start-2 sm:row-end-3 col-start-1 col-end-5 sm:col-start-5 sm:col-end-9 lg:col-start-7 lg:col-end-12 w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Medico</h5>
+                <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                   <a href="/registro/medico" class="w-full sm:w-auto bg-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-red-700 dark:hover:bg-red-600 dark:focus:ring-red-700">
+                      <i class="fa-solid fa-user-nurse">&nbsp;&nbsp;</i>
+                        <div class="text-left rtl:text-right">
+                            Medicos
+                        </div>
+                    </a>
             </div>
         </div>
+    
     </div>
-  </section>
+</section>
