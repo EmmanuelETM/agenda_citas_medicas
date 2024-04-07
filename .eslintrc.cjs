@@ -5,7 +5,8 @@ module.exports = {
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020,
-		extraFileExtensions: ['.svelte']
+		extraFileExtensions: ['.svelte'],
+		indent: ["error", 4]
 	},
 	env: {
 		browser: true,
@@ -13,3 +14,4 @@ module.exports = {
 		node: true
 	}
 };
+	

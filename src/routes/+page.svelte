@@ -1,5 +1,9 @@
 <script>
-    export let data;
+    import { Auth } from '@supabase/auth-ui-svelte'
+	import { ThemeSupa } from '@supabase/auth-ui-shared'
+
+	export let data
+  
     let count = 0;
 
     function increment(){
@@ -7,16 +11,6 @@
     }
 </script>
 
-
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-
-<button on:click={increment}
-class="rounded-full btn btn-primary">
-    clicked {count}
-    {count === 1 ? "time" : "times"}
-</button>
 
 
 
@@ -28,7 +22,7 @@ class="rounded-full btn btn-primary">
     <a href="./portal_medico">medico</a>
     <a href="./login">login</a>
     <a href="./registro">registro</a>
+
 </nav>
 
 
- 
