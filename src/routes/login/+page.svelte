@@ -1,10 +1,15 @@
 <script>
     import { goto } from "$app/navigation";
 
+    export let data;
+
+	let { supabase, session } = data
+	$: ({ supabase, session } = data)
+
     let show = false;
     let email = "";
     let password = "";
-    let tipo_json = {};
+    let tipo;
 
     function showPassword(){
         if(show){
@@ -17,53 +22,96 @@
     }
 
     async function handleLogin(event){
-        
-        let formData = JSON.stringify({
+
+        const { data, error } = await supabase.auth.signInWithPassword({
             email: email,
-            password: password
-        })
-
-
-        const res = await fetch('/auth/login', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: formData,
-        });
+            password: password,
+        });        
         
-        if(!res.ok){
-            const data = await res.json();
-            console.error('Error login')
-        }else if(res.ok){
-            console.log(res);
-            
-            const user_tipo = await fetch('/auth/tipo_user', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: formData
-            })
-            if(!user_tipo.ok){
-                const data = await res.json();
-                console.log(data);
-                console.log(res);
-            }
-            if(user_tipo.ok){
-                const data = await user_tipo.json();
-                tipo_json = data;
-                // console.log(tipo_json);
-            }
+        if(data){
+            console.log(data);
+        }
+        if (error){
+            console.log(error);
         }
 
-        // console.log(tipo_json.tipo_user);
-        if(tipo_json.tipo_user === 1){
-            goto('/portal_paciente/')
+        const { data: tipo_user, error: user_error } = await supabase
+            .from('user')
+            .select('tipo_user')
+            .eq('email', email)
+            .single();
+
+            
+        if(tipo_user){
+            tipo = tipo_user.tipo_user;
+            // console.log(tipo);
         }
-        else if(tipo_json.tipo_user === 2){
-            goto('/portal_medico')
-        }else{
-            goto('/portal_admin')
+        if(user_error){
+            console.log(user_error)
+        }
+
+        if(data && !error && tipo_user && !user_error){
+            if (tipo == 1) {
+                goto("/portal_paciente")
+            }
+            else if(tipo == 2){
+                goto("/portal_medico")
+            }
+            else if(tipo == 3){
+                goto("/portal_admin")
+            }
         }
 
     }
+
+    // async function handleLogin(event){
+        
+    //     let formData = JSON.stringify({
+    //         email: email,
+    //         password: password
+    //     })
+
+
+    //     const res = await fetch('/auth/login', {
+    //         method: 'POST',
+    //         headers: {'Content-Type': 'application/json'},
+    //         body: formData,
+    //     });
+        
+    //     if(!res.ok){
+    //         const data = await res.json();
+    //         console.error('Error login')
+    //     }else if(res.ok){
+    //         console.log(res);
+            
+    //         const user_tipo = await fetch('/auth/tipo_user', {
+    //             method: 'POST',
+    //             headers: {'Content-Type': 'application/json'},
+    //             body: formData
+    //         })
+    //         if(!user_tipo.ok){
+    //             const data = await res.json();
+    //             console.log(data);
+    //             console.log(res);
+    //         }
+    //         if(user_tipo.ok){
+    //             const data = await user_tipo.json();
+    //             tipo_json = data;
+    //             // console.log(tipo_json);
+    //         }
+    //     }
+
+    //     // console.log(tipo_json.tipo_user);
+    //     if(tipo_json.tipo_user === 1){
+    //         goto('/portal_paciente/')
+    //     }
+    //     else if(tipo_json.tipo_user === 2){
+    //         goto('/portal_medico')
+    //     }else{
+    //         goto('/portal_admin')
+    //     }
+
+    // }
 </script>
 
 <section class="bg-gray-50 h-dvh dark:bg-gray-900">

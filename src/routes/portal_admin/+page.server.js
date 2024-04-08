@@ -1,11 +1,11 @@
-import { fail, redirect } from '@sveltejs/kit'
+// import { fail, redirect } from '@sveltejs/kit'
 
-export const load= async ({ locals: { supabase, safeGetSession } }) => {
-  const { session } = await safeGetSession()
+// export const load= async ({ locals: { supabase, safeGetSession } }) => {
+//   const { session } = await safeGetSession()
 
-  if (!session) {
-    throw redirect(303, '/')
-  }
+//   if (!session) {
+//     throw redirect(303, '/')
+//   }
 
-  return { session, profile }
-}
+//   return { session, profile }
+// }

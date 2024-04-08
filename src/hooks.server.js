@@ -69,3 +69,7 @@ export const handle = async ({ event, resolve }) => {
     },
   })
 }
+
+
+// event.locals.supabase = supabase
+// event.locals.supabaseAdmin = supabaseAdmin

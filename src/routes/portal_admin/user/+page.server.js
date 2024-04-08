@@ -1,9 +1,9 @@
-import { supabaseClient } from "$lib/supabaseClient";
+import { supabase } from "$lib/supabaseClient";
 
 
 export async function load() {
-  const { data: data, error } = await supabaseClient
-  .from("user")
+  const { data: data, error } = await supabase
+.from("user")
   .select('*');
 
   if (error) {

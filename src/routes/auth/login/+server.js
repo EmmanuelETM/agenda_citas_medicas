@@ -11,13 +11,16 @@ export async function POST(event) {
         let tipo_user = 1;
 
 
-
         console.log("inicio login")
-        const { error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabase.auth.signInWithPassword({
             email: email,
             password: password,
         });        
         
+        if(data){
+            console.log(data);
+        }
+
         if (error) {
             console.log(error)
             return Response.json({ status: 500, cool: "notverycool" });
