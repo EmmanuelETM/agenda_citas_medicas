@@ -1,5 +1,8 @@
 <script>
+    import { onMount } from "svelte";
     import Buttons from "./buttons.svelte"
+
+    
 </script>
 
 <section class=" p-3 sm:p-5">
@@ -40,6 +43,7 @@
                             <th scope="col" class="px-4 py-3">Especialidades</th>
                             <th scope="col" class="px-4 py-3">Procedimientos</th>
                             <th scope="col" class="px-4 py-3">Consultorios</th>
+                            <th scope="col" class="px-4 py-3">Detalles</th>
                             <th scope="col" class="px-4 py-3">
                                 Actions
                             </th>
@@ -48,104 +52,388 @@
                     <tbody>
                         <tr class="border-b dark:border-gray-700">
                             <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 27&#34;</th>
-                            <td class="px-4 py-3">PC</td>
-                            <td class="px-4 py-3">Apple</td>
-                            <td class="px-4 py-3">300</td>
-                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">nombre</td>
+                            <td class="px-4 py-3">
+                                <button id="esp_button" data-modal-target="esp_modal" data-modal-toggle="esp_modal" type="button" class="hover:underline text-blue-500">
+                                    Especialidades
+                                </button>
+
+                                <div id="esp_modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+                                    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                                
+                                        <!-- Modal content -->
+                                        <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-700 sm:p-5">
+                                                                
+                                        <!-- Modal header -->
+                                            <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                                    Especialidades
+                                                </h3>
+                                                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="esp_modal">
+                                                    <i class="fa-solid fa-x"></i>    
+                                                    <span class="sr-only">Cerrar</span>                    
+                                                </button>        
+                                            </div>
+                                            <!-- Modal body -->
+                                                            
+                                            <div class="relative overflow-x-auto">
+                                                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white">
+                                                        <tr>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Product name
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Color
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Category
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Price
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Apple MacBook Pro 17"
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                Silver
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Laptop
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $2999
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Microsoft Surface Pro
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                White
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Laptop PC
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $1999
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="bg-white dark:bg-gray-800">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Magic Mouse 2
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                Black
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Accessories
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $99
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+
+                            <td class="px-4 py-3">
+                                <button id="proc_button" data-modal-target="proc_modal" data-modal-toggle="proc_modal" type="button" class="hover:underline text-blue-500">
+                                    Procedimientos
+                                </button>
+
+                                <div id="proc_modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+                                    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                                
+                                        <!-- Modal content -->
+                                        <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-700 sm:p-5">
+                                                                
+                                        <!-- Modal header -->
+                                            <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                                    Procedimientos
+                                                </h3>
+                                                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="proc_modal">
+                                                    <i class="fa-solid fa-x"></i>    
+                                                    <span class="sr-only">Cerrar</span>                    
+                                                </button>        
+                                            </div>
+                                            <!-- Modal body -->
+                                                            
+                                            <div class="relative overflow-x-auto">
+                                                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white">
+                                                        <tr>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Product name
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Color
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Category
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Price
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Apple MacBook Pro 17"
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                Silver
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Laptop
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $2999
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Microsoft Surface Pro
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                White
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Laptop PC
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $1999
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="bg-white dark:bg-gray-800">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Magic Mouse 2
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                Black
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Accessories
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $99
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td class="px-4 py-3">
+                                <button id="cons_button" data-modal-target="cons_modal" data-modal-toggle="cons_modal" type="button" class="hover:underline text-blue-500">
+                                    Consultorios
+                                </button>
+
+                                <div id="cons_modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+                                    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                                
+                                        <!-- Modal content -->
+                                        <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-700 sm:p-5">
+                                                                
+                                        <!-- Modal header -->
+                                            <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                                    Consultorios
+                                                </h3>
+                                                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="cons_modal">
+                                                    <i class="fa-solid fa-x"></i>    
+                                                    <span class="sr-only">Cerrar</span>                    
+                                                </button>        
+                                            </div>
+                                            <!-- Modal body -->
+                                                            
+                                            <div class="relative overflow-x-auto">
+                                                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white">
+                                                        <tr>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Product name
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Color
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Category
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Price
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Apple MacBook Pro 17"
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                Silver
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Laptop
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $2999
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Microsoft Surface Pro
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                White
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Laptop PC
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $1999
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="bg-white dark:bg-gray-800">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Magic Mouse 2
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                Black
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Accessories
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $99
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+
+                            <td class="px-4 py-3">
+                                <button id="det_button" data-modal-target="det_modal" data-modal-toggle="det_modal" type="button" class="hover:underline text-blue-500">
+                                    Detalles
+                                </button>
+
+                                <div id="det_modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+                                    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                                
+                                        <!-- Modal content -->
+                                        <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-700 sm:p-5">
+                                                                
+                                        <!-- Modal header -->
+                                            <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                                    Detalles
+                                                </h3>
+                                                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="det_modal">
+                                                    <i class="fa-solid fa-x"></i>    
+                                                    <span class="sr-only">Cerrar</span>                    
+                                                </button>        
+                                            </div>
+                                            <!-- Modal body -->
+                                                            
+                                            <div class="relative overflow-x-auto">
+                                                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white">
+                                                        <tr>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Product name
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Color
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Category
+                                                            </th>
+                                                            <th scope="col" class="px-6 py-3">
+                                                                Price
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Apple MacBook Pro 17"
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                Silver
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Laptop
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $2999
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Microsoft Surface Pro
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                White
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Laptop PC
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $1999
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="bg-white dark:bg-gray-800">
+                                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                                Magic Mouse 2
+                                                            </th>
+                                                            <td class="px-6 py-4">
+                                                                Black
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                Accessories
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                $99
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+
+
                             <td class="px-4 py-3">
                                 <Buttons/>
                             </td>
                         </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 20&#34;</th>
-                            <td class="px-4 py-3">PC</td>
-                            <td class="px-4 py-3">Apple</td>
-                            <td class="px-4 py-3">200</td>
-                            <td class="px-4 py-3">$1499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iPhone 14</th>
-                            <td class="px-4 py-3">Phone</td>
-                            <td class="px-4 py-3">Apple</td>
-                            <td class="px-4 py-3">1237</td>
-                            <td class="px-4 py-3">$999</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iPad Air</th>
-                            <td class="px-4 py-3">Tablet</td>
-                            <td class="px-4 py-3">Apple</td>
-                            <td class="px-4 py-3">4578</td>
-                            <td class="px-4 py-3">$1199</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Xbox Series S</th>
-                            <td class="px-4 py-3">Gaming/Console</td>
-                            <td class="px-4 py-3">Microsoft</td>
-                            <td class="px-4 py-3">56</td>
-                            <td class="px-4 py-3">$299</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">PlayStation 5</th>
-                            <td class="px-4 py-3">Gaming/Console</td>
-                            <td class="px-4 py-3">Sony</td>
-                            <td class="px-4 py-3">78</td>
-                            <td class="px-4 py-3">$799</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Xbox Series X</th>
-                            <td class="px-4 py-3">Gaming/Console</td>
-                            <td class="px-4 py-3">Microsoft</td>
-                            <td class="px-4 py-3">200</td>
-                            <td class="px-4 py-3">$699</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple Watch SE</th>
-                            <td class="px-4 py-3">Watch</td>
-                            <td class="px-4 py-3">Apple</td>
-                            <td class="px-4 py-3">657</td>
-                            <td class="px-4 py-3">$399</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">NIKON D850</th>
-                            <td class="px-4 py-3">Photo</td>
-                            <td class="px-4 py-3">Nikon</td>
-                            <td class="px-4 py-3">465</td>
-                            <td class="px-4 py-3">$599</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Monitor BenQ EX2710Q</th>
-                            <td class="px-4 py-3">TV/Monitor</td>
-                            <td class="px-4 py-3">BenQ</td>
-                            <td class="px-4 py-3">354</td>
-                            <td class="px-4 py-3">$499</td>
-                            <td class="px-4 py-3">
-                                <Buttons/>
-                            </td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>

@@ -1,10 +1,30 @@
 
 <script>
+    import { onMount } from "svelte";
     import Buttons from "./components/buttons.svelte"
-    /**
-     * @type {any}
-     */
-     export let data;
+    import { P } from "flowbite-svelte";
+    
+    export let data;
+
+    let {supabase, session} = data;
+    $: ({supabase, session} = data);
+
+    let users = []
+
+    onMount(async () => {
+
+        const {data: user, error} = await supabase
+            .from("user")
+            .select("*")
+        if(error){
+            console.log(error)
+        }
+        if(user){
+            console.log(user)
+            users = user;
+        }
+    })
+
 </script>
 
 <section class="p-3 sm:p-5">
@@ -134,10 +154,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {#each data.users as user}
+                        {#each users as user}
                             <tr class="border-b dark:border-gray-700">
                                 <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{user.user_id}</th>
-                                <td class="px-4 py-3">{user.nombre}</td>
+                                <td class="px-4 py-3">{user.nombre + ' ' + user.apellidos}</td>
                                 <td class="px-4 py-3">{user.fecha_nacimiento}</td>
                                 <td class="px-4 py-3">{user.email}</td>
                                 <td class="px-4 py-3">

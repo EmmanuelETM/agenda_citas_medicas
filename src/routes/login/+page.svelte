@@ -1,11 +1,12 @@
 <script>
     import { goto } from "$app/navigation";
-
+    import {global_tipo_user} from "$lib/tipo_user.js"
     export let data;
 
 	let { supabase, session } = data
 	$: ({ supabase, session } = data)
 
+    let hidden = true;
     let show = false;
     let email = "";
     let password = "";
@@ -33,6 +34,7 @@
         }
         if (error){
             console.log(error);
+            hidden = false
         }
 
         const { data: tipo_user, error: user_error } = await supabase
@@ -52,66 +54,20 @@
 
         if(data && !error && tipo_user && !user_error){
             if (tipo == 1) {
+                $global_tipo_user = 1
                 goto("/portal_paciente")
             }
             else if(tipo == 2){
+                $global_tipo_user = 2
                 goto("/portal_medico")
             }
             else if(tipo == 3){
+                $global_tipo_user = 3
                 goto("/portal_admin")
             }
         }
 
     }
-
-    // async function handleLogin(event){
-        
-    //     let formData = JSON.stringify({
-    //         email: email,
-    //         password: password
-    //     })
-
-
-    //     const res = await fetch('/auth/login', {
-    //         method: 'POST',
-    //         headers: {'Content-Type': 'application/json'},
-    //         body: formData,
-    //     });
-        
-    //     if(!res.ok){
-    //         const data = await res.json();
-    //         console.error('Error login')
-    //     }else if(res.ok){
-    //         console.log(res);
-            
-    //         const user_tipo = await fetch('/auth/tipo_user', {
-    //             method: 'POST',
-    //             headers: {'Content-Type': 'application/json'},
-    //             body: formData
-    //         })
-    //         if(!user_tipo.ok){
-    //             const data = await res.json();
-    //             console.log(data);
-    //             console.log(res);
-    //         }
-    //         if(user_tipo.ok){
-    //             const data = await user_tipo.json();
-    //             tipo_json = data;
-    //             // console.log(tipo_json);
-    //         }
-    //     }
-
-    //     // console.log(tipo_json.tipo_user);
-    //     if(tipo_json.tipo_user === 1){
-    //         goto('/portal_paciente/')
-    //     }
-    //     else if(tipo_json.tipo_user === 2){
-    //         goto('/portal_medico')
-    //     }else{
-    //         goto('/portal_admin')
-    //     }
-
-    // }
 </script>
 
 <section class="bg-gray-50 h-dvh dark:bg-gray-900">
@@ -125,6 +81,11 @@
               <!--Formulario-->
 
 
+                {#if !hidden}
+                    <div class="px-4 py-4 bg-red-700 text-white px2 rounded-lg">
+                        Error! Check your credentials
+                    </div>
+                {/if}
 
               <form method="post" on:submit|preventDefault={handleLogin} class="space-y-4 md:space-y-6">
                   <div>

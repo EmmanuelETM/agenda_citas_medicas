@@ -49,12 +49,6 @@ export async function POST(event) {
             return Response.json({ status: 500, body: { error: insertError.message } });
         }
             
-        // if(tipo_user === 2){
-        //     redirect(307, ``);
-        // }else if(tipo_user === 1){
-        //     redirect(307, ``)
-        // }
-
         return Response.json({ status: 303, headers: { Location: '/portal_medico' } });
 
     } catch (error) {
