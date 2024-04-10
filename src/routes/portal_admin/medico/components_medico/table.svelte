@@ -1,34 +1,10 @@
 <script>
-    import { onMount } from "svelte";
-    import Buttons from "./components_especialidad/buttons.svelte"
-    
-    export let data;
-
-    let {supabase, session} = data;
-    $: ({supabase, session} = data);
-
-    let especialidades = []
-
-    onMount(async () => {
-        const {data: especialidad, error} = await supabase
-            .from("especialidad")
-            .select("*")
-        if(error){
-            console.log(error)
-        }
-        if(especialidad){
-            // console.log(consultorio)
-            especialidades = especialidad;
-        }
-    })
-
-
+    import Buttons from "./buttons.svelte"
 </script>
-
-
 
 <section class="p-3 sm:p-5">
     <div class="mx-auto max-w-screen-xl px-4 lg:px-0">
+        <!-- Start coding here -->
         
         <!-- Table time -->
 
@@ -145,26 +121,29 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="w-1/4 px-4 py-3">Id Especialidad</th>
-                            <th scope="col" class="w-1/4 px-4 py-3">Nombre</th>
-                            <th scope="col" class="w-1/4 px-4 py-3">Descripcion</th>
-                            <th scope="col" class="w-1/4 px-4 py-3">
+                            <th scope="col" class="px-4 py-3">Id Medico</th>
+                            <th scope="col" class="px-4 py-3">Nombre</th>
+                            <th scope="col" class="px-4 py-3">email</th>
+                            <th scope="col" class="px-4 py-3">Especialidades</th>
+                            <th scope="col" class="px-4 py-3">Procedimientos</th>
+                            <th scope="col" class="px-4 py-3">Consultorios</th>
+                            <th scope="col" class="px-4 py-3">
                                 Actions
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {#each especialidades as especialidad}
-                            <tr class="border-b dark:border-gray-700">
-                                <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{especialidad.especialidad_id}</th>
-                                <td class="px-4 py-3">{especialidad.nombre}</td>
-                                <td class="px-4 py-3">{especialidad.descripcion}</td>
-                                <td class="px-4 py-3">
-                                    <Buttons/>
-                                </td>
-                            
-                            </tr>
-                        {/each}
+                        <tr class="border-b dark:border-gray-700">
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 27&#34;</th>
+                            <td class="px-4 py-3">PC</td>
+                            <td class="px-4 py-3">Apple</td>
+                            <td class="px-4 py-3">300</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">$2999</td>
+                            <td class="px-4 py-3">
+                                <Buttons/>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

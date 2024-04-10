@@ -1,15 +1,16 @@
-// import { fail, redirect } from '@sveltejs/kit'
-// import { global_tipo_user } from "$lib/tipo_user";
+import { fail, redirect } from '@sveltejs/kit'
+import { global_tipo_user } from "$lib/tipo_user";
 
 
-// export const load= async ({ locals: { supabase, safeGetSession } }) => {
-//     const { session } = await safeGetSession()
+export const load= async ({ locals: { supabase, safeGetSession } }) => {
+    const { session } = await safeGetSession()
     
-//     let tipo = 0;
+    let tipo = 0;
 
-//     if (!session) {
-//         throw redirect(303, '/login')
-//     }
+    if (!session) {
+        throw redirect(303, '/login')
+    }
+}
 //     // else{
 //     //     global_tipo_user.subscribe((value) => {
 //     //         tipo = value

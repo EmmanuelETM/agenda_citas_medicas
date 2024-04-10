@@ -10,7 +10,7 @@
          </button>
         <a href="/portal_admin" class="flex ms-2 md:me-24">
           <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
-          <span class="self-center text-lg font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Sistema de Agenda de Citas Medicas</span>
+          <span class="self-center text-lg font-semibold sm:text-2xl whitespace-nowrap dark:text-white">ER Agenda de Citas Medicas</span>
         </a>
       </div>
       <div class="flex items-center">

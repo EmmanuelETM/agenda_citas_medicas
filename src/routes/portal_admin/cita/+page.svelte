@@ -1,5 +1,5 @@
 <script>
-    import Table from "./components/table.svelte"
+    import Table from "./components_cita/table.svelte"
 </script>
 
 <Table/>

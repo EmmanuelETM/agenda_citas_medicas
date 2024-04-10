@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import Buttons from "./components/buttons.svelte"
+    import Buttons from "./components_consultorios/buttons.svelte"
     
     export let data;
 

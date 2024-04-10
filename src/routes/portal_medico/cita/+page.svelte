@@ -1,34 +1,40 @@
 <script>
     import { onMount } from "svelte";
-    import Buttons from "./components/buttons.svelte"
+    // import Buttons from "./components_cita/buttons.svelte"
 
     export let data;
 
     let {supabase, session} = data
     $: ({supabase, session} = data)
 
-    
 
-    let medicos = [];
-    
+
+
     let searchValue = '';
-
-
+    let monto;
+    let citas = [];
 
     onMount(async () => {
 
         try{
-            const {data: medico, error} = await supabase   
-                .rpc("medico_consultar", {pvalor: "a"})
-                .select("*")
+            const {data: medico, error: medico_error} = await supabase
+                .rpc("get_medico_id", {pvalor: session.user.email})
 
-            if(error){
-                console.log(error)
+            if(medico_error){
+                console.log(medico_error)
             }
 
-            if(medico) {
-                console.log(medico)
-                medicos = medico
+
+            const {data: cita, error: error_cita} = await supabase
+                .rpc('buscar_tabla_citas_medico', {pvalor: "a", id: medico[0].medico_id})
+
+            if(error_cita){
+                console.log(error_cita)
+            }
+
+            if(cita){
+                console.log(cita)
+                citas = cita
             }
 
         }catch(error){
@@ -37,26 +43,44 @@
     })
 
     async function handleSearch(event){
-        try{
-            const {data: medico, error} = await supabase   
-                .rpc("medico_consultar", {pvalor: searchValue})
-                .select("*")
 
-            if(error){
+        
+        try{
+            const {data: user, error: user_error} = await supabase
+                .rpc("get_medico_id", {pvalor: session.user.email})
+
+            if(user_error){
                 console.log(error)
             }
 
-            if(medico) {
-                console.log(medico)
-                medicos = medico
+
+            const {data: cita, error: error_cita} = await supabase
+                .rpc('buscar_tabla_citas_medico', {pvalor: searchValue, id: user[0].medico_id})
+
+            if(error_cita){
+                console.log(error_cita)
+            }
+
+            if(cita){
+                console.log(cita)
+                citas = cita
             }
 
         }catch(error){
             console.log(error)
         }
     }
-    
-    
+
+    async function handleFacturar(event){
+
+        try{
+            x = 0/1;
+
+        }catch(error){
+            alert("Error, Intente de nuevo")
+        }
+    }
+
 
 </script>
 
@@ -69,7 +93,7 @@
         <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                 <div class="w-full md:w-1/2">
-                    <form on:submit={handleSearch} class="flex items-center">   
+                    <form on:submit|preventDefault={handleSearch} class="flex items-center">   
                         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative w-full">
                             <div class="text-white absolute inset-y-0 left-0 flex items-center ps-3 pointer-events-none">
@@ -84,50 +108,50 @@
                     </form>
                 </div>
 
-
-                
-                <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                    
-                    <div class="flex items-center space-x-3 w-full md:w-auto">
-
-                        <!-- Filter button -->
-
-                        
-                        <!-- End Button -->
-
-                    </div>
-                </div>
             </div>
+            <!-- Table -->
+
             <div class="overflow-x-auto">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-4 py-3">Id Medico</th>
-                            <th scope="col" class="px-4 py-3">Nombre</th>
-                            <th scope="col" class="px-4 py-3">Especialidad</th>
-                            <th scope="col" class="px-4 py-3">Procedimientos</th>
-                            <th scope="col" class="px-4 py-3">Consultorios</th>
-                            <th scope="col" class="px-4 py-3">Detalles</th>
+                            <th scope="col" class="px-4 py-3">Id Cita</th>
+                            <th scope="col" class="px-4 py-3">Paciente</th>
+                            <th scope="col" class="px-4 py-3">Fecha</th>
+                            <th scope="col" class="px-4 py-3">Hora</th>
+                            <th scope="col" class="px-4 py-3">Categoria</th>
+                            <th scope="col" class="px-4 py-3">Motivo</th>
+                            <th scope="col" class="px-4 py-3">Estado</th>
                             <th scope="col" class="px-4 py-3">
-                                Actions
+                                Facturar
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {#each medicos as medico}
+                        {#each citas as cita}
                             <tr class="border-b dark:border-gray-700">
-                                <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{medico.medico_id}</th>
-                                <td class="px-4 py-3">{medico.nombre}</td>
-                                <td class="px-4 py-3">{medico.especialidad}</td>
-                                <td class="px-4 py-3">{medico.procedimiento}</td>
-                                <td class="px-4 py-3">{medico.consultorio}</td>
-                                <td class="px-4 py-3">{medico.detalles}</td>
+                                <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{cita.cita_id}</th>
+                                <td class="px-4 py-3">{cita.paciente}</td>
+                                <td class="px-4 py-3">{cita.fecha}</td>
+                                <td class="px-4 py-3">{cita.hora}</td>
+                                <td class="px-4 py-3">{cita.categoria}</td>
+                                <td class="px-4 py-3">{cita.motivo}</td>
+                                <td class="px-4 py-3">{cita.estado}</td>
                                 <td class="px-4 py-3">
-                                    <button id="AddButton"  type="button" class="flex items-center justify-center text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
-                                        <i class="fa-solid fa-plus">&nbsp;&nbsp;</i>
-                                        <a href="/portal_paciente/medico/{medico.medico_id}">Agendar Cita</a>
-                                    </button>
-                                </td>        
+                                    <form on:submit|preventDefault={handleFacturas} class="flex items-center">   
+                                        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                        <div class="relative w-full">
+                                            <div class="text-white absolute inset-y-0 left-0 flex items-center ps-3 pointer-events-none">
+                                                <i class="fa-solid fa-dollar-sign"></i>
+                                            </div>
+                                            <input bind:value={monto} type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Monto..." required />
+                                            
+                                            <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </td>
                             </tr>
                         {/each}
                     </tbody>
@@ -164,5 +188,4 @@
             </nav>
         </div>
     </div>
-</section>
- 
+    </section>
