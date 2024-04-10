@@ -16,7 +16,7 @@ export const load = async ({ locals: { supabase, safeGetSession } }) => {
     try{
 
         const {data: medico, error} = await supabase
-            .rpc("get_medico_id", {pvalor: "antoniomanuel@gmail.com"})//{pvalor: session.user.email})
+            .rpc("get_medico_id", {pvalor: session.user.email})//{pvalor: session.user.email})
 
         if(error){
             console.log(error);

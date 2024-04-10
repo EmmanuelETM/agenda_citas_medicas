@@ -25,7 +25,7 @@
             }
 
             const {data: factura, error: error_factura} = await supabase
-                .rpc('paciente_facturas_consultar', {pvalor: "a", id: 2})
+                .rpc('paciente_facturas_consultar', {pvalor: "a", id: user[0].user_id})
 
             if(error_factura){
                 console.log(error_factura)

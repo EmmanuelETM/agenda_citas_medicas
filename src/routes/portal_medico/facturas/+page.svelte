@@ -67,6 +67,24 @@
         }
     }
 
+    async function handlePago(event, factura_id){
+        try{
+
+            console.log(factura_id);
+            const {error} = await supabase
+                .rpc('pago_efectivo', {pfactura_id: factura_id})
+
+            if(error){
+                console.log(error)
+            }
+            
+
+        }catch(error){
+            console.log(error)
+            alert("Error, intent denuevo")
+        }
+    }
+
 </script>
 
 <section class="p-3 sm:p-5">
@@ -100,7 +118,7 @@
                     
                     <!-- Agregar Button -->
 
-                    <button id="AddButton" data-modal-target="AddModal" data-modal-toggle="AddModal" type="button" class="flex items-center justify-center text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                    <button type="button" class="flex items-center justify-center text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
                         <i class="fa-solid fa-plus">&nbsp;&nbsp;</i>
                         <a href="/portal_medico/cita"> Agregar</a>
                     </button>
@@ -123,6 +141,7 @@
                             <th scope="col" class="px-4 py-3">Fecha</th>
                             <th scope="col" class="px-4 py-3">Monto</th>
                             <th scope="col" class="px-4 py-3">Estado</th>
+                            <th scope="col" class="px-4 py-3">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -135,6 +154,12 @@
                                 <td class="px-4 py-3">${factura.monto}</td>
                                 <td class="px-4 py-3">{factura.fecha}</td>
                                 <td class="px-4 py-3">{factura.estado}</td>
+                                <td class="px-4 py-3">
+                                    <button on:click={(event) => {handlePago(event, factura.factura_id)}} type="button" class="flex items-center justify-center text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                                        <i class="fa-solid fa-plus">&nbsp;&nbsp;</i>
+                                        Pago en Efectivo
+                                    </button>
+                                </td>
                             </tr>
                         {/each}
                     </tbody>

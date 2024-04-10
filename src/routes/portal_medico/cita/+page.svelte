@@ -7,15 +7,12 @@
     let {supabase, session} = data
     $: ({supabase, session} = data)
 
-
-
-
     let searchValue = '';
     let monto;
+    let cita_id;
     let citas = [];
 
     onMount(async () => {
-
         try{
             const {data: medico, error: medico_error} = await supabase
                 .rpc("get_medico_id", {pvalor: session.user.email})
@@ -71,16 +68,47 @@
         }
     }
 
-    async function handleFacturar(event){
+    async function update_estado(cita_id){
+        const { error } = await supabase
+        .from('cita')
+        .update({ estado: 'Facturado' })
+        .eq('cita_id', cita_id);
+
+            if (error) {
+            console.error('Error updating cita estado:', error);
+            } else {
+            console.log('Cita estado updated:', cita_id);
+            }
+    }
+    
+
+
+    async function handleFacturas(event, cita_id) {
+        event.preventDefault();
 
         try{
-            x = 0/1;
+            const { data, error } = await supabase
+                .from('factura')
+                .insert([{ 
+                    cita_id: cita_id, 
+                    monto: monto,
+                    estado: "Activo", 
+                }]);
+
+            if (error) {
+                console.error('Error inserting factura:', error);
+            } else {
+                console.log('Factura inserted:', data);
+            }
+
+            await update_estado(cita_id);
 
         }catch(error){
-            alert("Error, Intente de nuevo")
+            console.log(error)
         }
+        
+        
     }
-
 
 </script>
 
@@ -138,14 +166,14 @@
                                 <td class="px-4 py-3">{cita.motivo}</td>
                                 <td class="px-4 py-3">{cita.estado}</td>
                                 <td class="px-4 py-3">
-                                    <form on:submit|preventDefault={handleFacturas} class="flex items-center">   
+                                    <form on:submit|preventDefault={(event) => {handleFacturas(event, cita.cita_id)}} class="flex items-center">   
                                         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                                         <div class="relative w-full">
                                             <div class="text-white absolute inset-y-0 left-0 flex items-center ps-3 pointer-events-none">
                                                 <i class="fa-solid fa-dollar-sign"></i>
-                                            </div>
-                                            <input bind:value={monto} type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Monto..." required />
-                                            
+                                            </div> 
+                                            <input bind:value={monto}  type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Monto..." required />
+
                                             <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                                                 <i class="fa-solid fa-file-invoice-dollar"></i>
                                             </button>
