@@ -1,6 +1,4 @@
 import { fail, redirect } from '@sveltejs/kit'
-import { global_tipo_user } from "$lib/tipo_user";
-import { Move3DIcon } from 'lucide-svelte';
 
 
 export const load = async ({ locals: { supabase, safeGetSession } }) => {

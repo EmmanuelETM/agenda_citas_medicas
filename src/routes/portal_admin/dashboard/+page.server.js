@@ -1,4 +1,5 @@
 import { fail, redirect } from '@sveltejs/kit'
+import { global_tipo_user } from "$lib/tipo_user";
 
 
 export const load= async ({ locals: { supabase, safeGetSession } }) => {
@@ -9,4 +10,5 @@ export const load= async ({ locals: { supabase, safeGetSession } }) => {
     if (!session) {
         throw redirect(303, '/login')
     }
+
 }

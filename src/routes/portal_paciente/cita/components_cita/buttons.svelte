@@ -4,6 +4,10 @@
     <i class="fa-solid fa-pen-to-square"></i>
 </button>
 
+<button data-modal-target="deleteModal" data-modal-toggle="deleteModal" type="button" class="px-3 py-2 text-xs font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+    <i class="fa-solid fa-trash"></i>
+</button>
+
 <!-- Edit Modal -->
 
 <!-- Main modal -->
@@ -66,9 +70,7 @@
 
 <!-- Delete Button -->
                     
-<button data-modal-target="deleteModal" data-modal-toggle="deleteModal" type="button" class="px-3 py-2 text-xs font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-    <i class="fa-solid fa-trash"></i>
-</button>
+
 
 
 <!-- Delete modal -->

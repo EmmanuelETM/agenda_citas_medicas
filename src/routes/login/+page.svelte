@@ -1,6 +1,8 @@
 <script>
     import { goto } from "$app/navigation";
-    import {global_tipo_user} from "$lib/tipo_user.js"
+    // import {global_tipo_user} from "$lib/tipo_user.js"
+    // import {g_tipo} from "$lib/tipo_user.js"
+    
     export let data;
 
 	let { supabase, session } = data
@@ -54,15 +56,15 @@
 
         if(data && !error && tipo_user && !user_error){
             if (tipo == 1) {
-                $global_tipo_user = 1
+                // $global_tipo_user = 1
                 goto("/portal_paciente")
             }
             else if(tipo == 2){
-                $global_tipo_user = 2
+                // $global_tipo_user = 2
                 goto("/portal_medico")
             }
             else if(tipo == 3){
-                $global_tipo_user = 3
+                // $global_tipo_user = 3
                 goto("/portal_admin")
             }
         }

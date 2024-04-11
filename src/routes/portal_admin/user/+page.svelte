@@ -6,6 +6,8 @@
     
     export let data;
 
+    let searchValue ="";
+
     let {supabase, session} = data;
     $: ({supabase, session} = data);
 
@@ -26,6 +28,25 @@
         }
     })
 
+    async function handleSearch(event) {
+
+        try{
+            const {data, error} = await supabase    
+                .rpc('user_consultar', {pvalor: searchValue})
+            
+            if(data){
+                users = data;
+            }
+            if(error){
+                console.log(error)
+            }
+
+        }catch(error){
+            console.log(error)
+        }
+        
+    }
+
 </script>
 
 <section class="p-3 sm:p-5">
@@ -37,13 +58,13 @@
         <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                 <div class="w-full md:w-1/2">
-                    <form class="flex items-center">   
+                    <form on:submit={handleSearch} class="flex items-center">   
                         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative w-full">
                             <div class="text-white absolute inset-y-0 left-0 flex items-center ps-3 pointer-events-none">
                                 <i class="fa-solid fa-magnifying-glass "></i>
                             </div>
-                            <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Buscar..." required />
+                            <input type="search" bind:value={searchValue} id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Buscar..." required />
                             
                             <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                 Search

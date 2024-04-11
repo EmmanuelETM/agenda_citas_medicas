@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import Buttons from "./components_cita/buttons.svelte"
+    // import Buttons from "./components_cita/buttons.svelte"
 
     export let data;
 
@@ -71,6 +71,31 @@
 
     }
 
+    async function handleDelete(event, cita_id){
+
+        try{
+
+            const {data: delete_cita, error: delete_error} = await supabase
+                .from('cita')
+                .delete()
+                .eq("cita_id", cita_id)
+
+            if(delete_cita){
+                console.log(delete_cita)
+            }
+
+            if(delete_error){
+                console.log(delete_error)
+                alert("algo anda mal")
+            }
+
+
+        }catch(error){
+            console.log(error)
+            alert("error. Intente denuevo")
+        }
+    }
+
 
 </script>
 
@@ -83,7 +108,7 @@
         <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                 <div class="w-full md:w-1/2">
-                    <form on:submit|preventDefault={handleSearch} class="flex items-center">   
+                    <form on:submit|preventDefault={() => {handleSearch}} class="flex items-center">   
                         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative w-full">
                             <div class="text-white absolute inset-y-0 left-0 flex items-center ps-3 pointer-events-none">
@@ -103,7 +128,7 @@
                 <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
                 
                     <!-- Agregar Button -->
-                    <button id="AddButton" type="button" class="flex items-center justify-center text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                    <button type="button" class="flex items-center justify-center text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
                         <i class="fa-solid fa-plus">&nbsp;&nbsp;</i>
                         <a href="/portal_paciente/medico">Agregar</a>
                     </button>
@@ -141,9 +166,14 @@
                                 <td class="px-4 py-3">{cita.motivo}</td>
                                 <td class="px-4 py-3">{cita.estado}</td>
                                 <td class="px-4 py-3">
-                                    <Buttons/>
+                                    <button type="button" class="px-3 py-2 text-xs font-medium text-center text-white bg-yellow-700 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                        <a href="/portal_paciente/cita/{cita.cita_id}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    </button>
+                                    
+                                    <button on:click={() => {handleDelete(event, cita.cita_id)}} type="button" class="px-3 py-2 text-xs font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
                                 </td>
-                            
                             </tr>
                         {/each}
                     </tbody>

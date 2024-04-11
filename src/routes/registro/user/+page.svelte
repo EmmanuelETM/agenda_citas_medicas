@@ -63,12 +63,6 @@
                 <h5 class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                     Registro User    
                 </h5>
-
-                {#if !hidden}
-                    <div class="px-4 py-4 bg-green-700 text-white px2 rounded-lg">
-                        Success! Check you Email to verify your Account! Go to <a href="/login"><b class="hover:underline">Log In</b></a>
-                    </div>
-                {/if}
                 
                 <form on:submit|preventDefault={handleSignup} method="post" class="flex flex-col space-y-4 md:space-y-6">
                     <div class="flex space-x-12">

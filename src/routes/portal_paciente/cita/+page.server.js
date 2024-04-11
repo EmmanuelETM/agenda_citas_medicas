@@ -1,6 +1,4 @@
 import { fail, redirect } from '@sveltejs/kit'
-import { global_tipo_user } from "$lib/tipo_user";
-import { preventDefault } from '@fullcalendar/core/internal';
 
 
 export const load = async ({ locals: { supabase, safeGetSession } }) => {
